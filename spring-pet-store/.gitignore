@@ -1,0 +1,13 @@
+target/*
+.settings/*
+.classpath
+.project
+.idea
+*.iml
+/target
+
+generated/
+
+# Easier branch switching
+springboot-petstore-client/
+springboot-petstore-server/

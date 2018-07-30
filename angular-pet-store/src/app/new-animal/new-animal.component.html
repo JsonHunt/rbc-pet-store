@@ -1,0 +1,43 @@
+<div>
+	<div class="adding-animal">
+		<div class="">
+			Enter new animal information:
+		</div>
+		<hr>
+		<form (ngSubmit)="confirmNewAnimal()" autocomplete="off">
+
+			<input name="name"
+				[value]="localState.name"
+				(input)="localState.name = $event.target.value"
+				placeholder="Name"
+				autofocus>
+			<br>
+			<input name="race"
+				[value]="localState.race"
+				(input)="localState.race = $event.target.value"
+				placeholder="Race">
+			<br>
+			<select name="gender" [(ngModel)]="localState.gender">
+				<option *ngFor="let c of genders" [value]="c">{{c}}</option>
+			</select>
+			<br>
+			<input name="age"
+				[value]="localState.age"
+				(input)="localState.age = $event.target.value"
+				placeholder="Age (years)">
+			<br>
+			<button>Confirm</button>
+			<button (click)="cancelAnimal()">Cancel</button>
+		</form>
+	</div>
+
+		<!--
+				<input type="text" [value]="localState.value" (input)="localState.value = $event.target.value" autofocus>
+				Rather than wiring up two-way data-binding ourselves with [value] and (input)
+				we can use Angular's [(ngModel)] syntax
+				<input type="text" name="textInput" [(ngModel)]="localState.value" autofocus>
+			-->
+
+		<!-- <pre>this.localState = {{ localState | json }}</pre>
+		<pre>this.genders = {{ genders | json }}</pre> -->
+</div>

@@ -1,0 +1,32 @@
+<div>
+	<div>
+		<div class="no-animals" *ngIf="animals.length === 0">
+			<h4>Sorry, we are currently out of animals!</h4>
+		</div>
+		<div class="yes-animals" *ngIf="animals.length > 0">
+			<h4>Animals in stock:</h4>
+			<table style="width: 100%" cellpadding='0' cellspacing="0">
+				<tr class="header">
+					<th>Name</th>
+					<th>Race</th>
+					<th>Gender</th>
+					<th>Age</th>
+					<th></th>
+				</tr>
+				<tr class="animal-row" *ngFor="let animal of animals">
+					<td>{{animal.name}}</td>
+					<td>{{animal.race}}</td>
+					<td>{{animal.gender}}</td>
+					<td>{{animal.age}}</td>
+					<td>
+						<button (click)="onDeleteAnimal(animal.id)">Delete</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="add-animal">
+			<button (click)="onAddAnimal()">Add Animal</button>
+		</div>
+	</div>
+</div>

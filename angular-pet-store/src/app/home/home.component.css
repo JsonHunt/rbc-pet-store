@@ -1,0 +1,19 @@
+/*styles for home content only*/
+.delete-animal {
+	float:right;
+}
+
+th {
+	text-align: left;
+	font-size: 12px;
+	color: #999;
+}
+
+.animal-row td {
+	padding: 3px 10px;
+	border: 1px solid #aaa;
+}
+
+table {
+	margin-bottom: 10px;
+}
